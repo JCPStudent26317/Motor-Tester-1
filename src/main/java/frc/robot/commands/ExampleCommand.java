@@ -12,12 +12,10 @@ public class ExampleCommand extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ExampleSubsystem m_subsystem;
 
-  
   public ExampleCommand(ExampleSubsystem subsystem) {
     m_subsystem = subsystem;
     addRequirements(subsystem);
   }
-
 
   @Override
   public void initialize() {}
