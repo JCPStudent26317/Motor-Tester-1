@@ -7,22 +7,27 @@ package frc.robot.subsystems;
 import com.revrobotics.CANSparkLowLevel;
 import com.revrobotics.CANSparkMax;
 
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class Motors extends SubsystemBase {
   
   private final CANSparkMax motorL1, motorL2, motorR1, motorR2;
+  private final SendableChooser motorChooser;
 
   public Motors() {
     motorL1 = new CANSparkMax(0, CANSparkLowLevel.MotorType.kBrushless);
     motorL2 = new CANSparkMax(1, CANSparkLowLevel.MotorType.kBrushless);  
     motorR1 = new CANSparkMax(2, CANSparkLowLevel.MotorType.kBrushless);
     motorR2 = new CANSparkMax(3, CANSparkLowLevel.MotorType.kBrushless);
+
+    motorChooser.setDefaultOption("Motor L1", motorL1);
   }
 
   @Override
   public void periodic() {
+  
   }
 
   @Override
